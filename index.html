@@ -474,6 +474,75 @@
             line-height: 1.5;
         }
 
+        /* Summary Section */
+        .summary-section {
+            background: linear-gradient(135deg, #1E3A5F 0%, #2E5A88 50%, #4682B4 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .summary-section h2 {
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .summary-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .summary-card h3 {
+            color: #FFE082;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            text-align: center;
+            position: relative;
+            padding-left: 0;
+        }
+
+        .summary-card h3:before {
+            display: none;
+        }
+
+        .summary-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-card li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .summary-card li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #81C784;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
         /* Tablet Responsive */
         @media screen and (max-width: 768px) {
             .container {
@@ -555,13 +624,12 @@
                 font-size: 0.9rem;
             }
 
-            .important-section {
-                padding: 15px 15px 15px 50px;
+            .important-section h4 {
+                padding-left: 35px;
             }
 
-            .important-section::before {
-                font-size: 1.5rem;
-                left: 15px;
+            .important-section h4::before {
+                font-size: 1.2rem;
             }
 
             .numbered-list li {
@@ -572,6 +640,19 @@
                 width: 30px;
                 height: 30px;
                 font-size: 1rem;
+            }
+
+            .summary-section {
+                padding: 30px 20px;
+            }
+
+            .summary-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
 
@@ -804,17 +885,17 @@
             }
 
             .important-section {
-                padding: 12px 12px 12px 45px;
+                padding: 15px;
                 margin: 15px 0;
-            }
-
-            .important-section::before {
-                font-size: 1.3rem;
-                left: 12px;
             }
 
             .important-section h4 {
                 font-size: 0.95rem;
+                padding-left: 30px;
+            }
+
+            .important-section h4::before {
+                font-size: 1.1rem;
             }
 
             .important-section p {
@@ -830,6 +911,31 @@
                 width: 25px;
                 height: 25px;
                 font-size: 0.85rem;
+            }
+
+            .summary-section {
+                padding: 20px 15px;
+                margin: 20px 0;
+            }
+
+            .summary-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .summary-card {
+                padding: 20px;
+            }
+
+            .summary-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .summary-card li {
+                font-size: 0.85rem;
+                margin-bottom: 10px;
+                padding-left: 20px;
             }
         }
 
@@ -868,12 +974,16 @@
             }
 
             .important-section {
-                padding: 10px 10px 10px 40px;
+                padding: 12px;
             }
 
-            .important-section::before {
-                font-size: 1.2rem;
-                left: 10px;
+            .important-section h4 {
+                padding-left: 25px;
+                font-size: 0.9rem;
+            }
+
+            .important-section h4::before {
+                font-size: 1rem;
             }
 
             .numbered-list li {
@@ -883,6 +993,26 @@
             .numbered-list li::before {
                 width: 22px;
                 height: 22px;
+                font-size: 0.8rem;
+            }
+
+            .summary-section {
+                padding: 15px 10px;
+            }
+
+            .summary-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .summary-card {
+                padding: 15px;
+            }
+
+            .summary-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .summary-card li {
                 font-size: 0.8rem;
             }
         }
@@ -901,6 +1031,7 @@
                 <li><a href="#teknik">Teknik Highlight</a></li>
                 <li><a href="#alat-bahan">Alat & Bahan</a></li>
                 <li><a href="#prosedur">Prosedur</a></li>
+                <li><a href="#rangkuman">Rangkuman</a></li>
             </ul>
         </nav>
 
@@ -1263,6 +1394,51 @@
                         <h5>4. Pengaplikasian Bleaching</h5>
                         <p>Pengaplikasian cream bleaching yang sudah diaduk terlebih dahulu dengan menggunakan cream developer 20 volume. Kemudian aplikasikan pada setiap section rambut dengan teknik highlight sampai dengan selesai. Diamkan selama 30 menit dan lakukan pengecekan rambut untuk mengetahui hasil warnanya.</p>
                         <div class="image-container">
+                            <img src="images/aplikasi-bleaching.jpeg" alt="Pengaplikasian Bleaching Teknik Highlight" style="max-width: 300px;">
+                            <div class="image-caption">Gambar 2.43 Pengaplikasian Bleaching Teknik Highlight (Sumber: Ermavianti, 2020)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <h5>5. Pencucian Rambut Pertama</h5>
+                        <p>Cuci rambut hingga bersih.</p>
+                        <div class="image-container">
+                            <img src="images/pencucian-rambut.jpeg" alt="Pencucian Rambut" style="max-width: 300px;">
+                            <div class="image-caption">Gambar 2.44 Pencucian Rambut (Sumber: Anata, 2022)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <h5>6. Pengeringan Rambut</h5>
+                        <p>Keringkan rambut dengan menggunakan hair dryer.</p>
+                        <div class="image-container">
+                            <img src="images/pengeringan-rambut.jpeg" alt="Mengeringkan Rambut" style="max-width: 300px;">
+                            <div class="image-caption">Gambar 2.45 Mengeringkan Rambut (Sumber: Carolline, 2022)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <h5>7. Parting Rambut Kedua</h5>
+                        <p>Parting rambut menjadi 4 bagian dengan menggunakan jepit bergerigi. Dua pada bagian depan dan dua pada bagian belakang membentuk garis simetris.</p>
+                        <div class="image-container">
+                            <img src="images/parting-rambut.jpeg" alt="Parting Rambut" style="max-width: 300px;">
+                            <div class="image-caption">Gambar 2.46 Parting Rambut (Sumber: Yani, 2022)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <h5>8. Pencampuran Cat Pewarna</h5>
+                        <p>Campurkan kosmetik pewarna dengan perbandingan 1:1,5 (Cat Pewarna : Cream Developer).</p>
+                        <div class="image-container">
+                            <img src="images/pencampuran-cat.jpeg" alt="Pencampuran Cat Pewarna" style="max-width: 300px;">
+                            <div class="image-caption">Gambar 2.47 Pencampuran Cat Pewarna (Sumber: Aprilia, 2020)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <h5>9. Pengaplikasian Cat Pewarna</h5>
+                        <p>Pengecatan dilakukan dengan pengambilan rambut per section.</p>
+                        <div class="image-container">
                             <img src="images/aplikasi-cat.jpeg" alt="Pengaplikasian Cat Pada Rambut" style="max-width: 300px;">
                             <div class="image-caption">Gambar 2.48 Pengaplikasian Cat Pada Rambut (Sumber: Aprilia, 2020)</div>
                         </div>
@@ -1317,6 +1493,80 @@
             </div>
         </div>
 
+        <!-- Rangkuman Pembelajaran -->
+        <div class="summary-section" id="rangkuman">
+            <h2>Rangkuman Pembelajaran</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 30px; color: rgba(255,255,255,0.9);">
+                Berikut adalah ringkasan poin-poin penting yang telah dipelajari dalam materi Pewarnaan Rambut Teknik Highlight
+            </p>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3>Konsep Dasar Pewarnaan</h3>
+                    <ul>
+                        <li>Pewarnaan rambut adalah praktik mengubah warna rambut dengan bahan kimia</li>
+                        <li>Tiga proses utama: Hair Tinting, Hair Lightening, dan Bleaching</li>
+                        <li>Bertujuan untuk menutupi uban, mengikuti tren, dan meningkatkan kepercayaan diri</li>
+                        <li>Melibatkan struktur rambut: kutikula, korteks, dan medula</li>
+                    </ul>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Teknik Highlight</h3>
+                    <ul>
+                        <li>Highlight menghasilkan efek warna gelap dan terang yang selang-seling</li>
+                        <li>Dua metode utama: Slicing dan Weaving</li>
+                        <li>Slicing: tanpa gerakan zig-zag (Micro 2mm, Macro 4-6mm)</li>
+                        <li>Weaving: gerakan zig-zag seperti menganyam (Micro, Medium, Macro)</li>
+                        <li>Kedalaman weaving umumnya sama dengan ukuran lebarannya</li>
+                    </ul>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Peralatan dan Bahan</h3>
+                    <ul>
+                        <li>15 jenis alat: sisir, kuas, mangkok, hairdryer, catok, dll</li>
+                        <li>5 jenis bahan: masker, tissu, sarung tangan, foil, tong sampah</li>
+                        <li>4 jenis lenan: handuk, cape, apron, keset kaki</li>
+                        <li>5 jenis kosmetik: shampo, conditioner, bleaching, pewarna, developer</li>
+                    </ul>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Persiapan Sebelum Pewarnaan</h3>
+                    <ul>
+                        <li>Persiapan alat kerja dengan menjaga higienitas</li>
+                        <li>Persiapan tempat kerja yang bersih dan nyaman</li>
+                        <li>Persiapan pribadi beautician (10 poin penting)</li>
+                        <li>Persiapan pelanggan dengan cape dan penutup telinga</li>
+                        <li>Wajib melakukan patch test 24 jam sebelumnya</li>
+                    </ul>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Prosedur Pewarnaan (14 Langkah)</h3>
+                    <ul>
+                        <li>Persiapan → Parting → Bleaching → Cuci → Keringkan</li>
+                        <li>Parting kedua → Campuran cat → Aplikasi cat</li>
+                        <li>Tes warna → Cuci dengan conditioner</li>
+                        <li>Pengeringan akhir → Penataan → Hasil akhir</li>
+                        <li>Setiap langkah memiliki waktu dan teknik tertentu</li>
+                    </ul>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Hal Penting yang Harus Diingat</h3>
+                    <ul>
+                        <li>Patch test wajib dilakukan untuk mencegah alergi</li>
+                        <li>Perbandingan campuran: Bleaching (40gr:80ml), Cat (1:1,5)</li>
+                        <li>Waktu tunggu: Bleaching 30 menit, Cat pewarna 30 menit</li>
+                        <li>Back to back technique untuk ketebalan >6mm</li>
+                        <li>Selalu jaga kebersihan dan keamanan kerja</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div class="hero">
             <h2 style="color: white; border: none; margin: 0; font-size: 1.5rem;">Terima Kasih</h2>
             <p style="margin: 10px 0 0 0;">Materi Pewarnaan Rambut Teknik Highlight telah selesai dipelajari</p>
@@ -1339,49 +1589,4 @@
         });
     </script>
 </body>
-</html>-bleaching.jpeg" alt="Pengaplikasian Bleaching Teknik Highlight" style="max-width: 300px;">
-                            <div class="image-caption">Gambar 2.43 Pengaplikasian Bleaching Teknik Highlight (Sumber: Ermavianti, 2020)</div>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <h5>5. Pencucian Rambut Pertama</h5>
-                        <p>Cuci rambut hingga bersih.</p>
-                        <div class="image-container">
-                            <img src="images/pencucian-rambut.jpeg" alt="Pencucian Rambut" style="max-width: 300px;">
-                            <div class="image-caption">Gambar 2.44 Pencucian Rambut (Sumber: Anata, 2022)</div>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <h5>6. Pengeringan Rambut</h5>
-                        <p>Keringkan rambut dengan menggunakan hair dryer.</p>
-                        <div class="image-container">
-                            <img src="images/pengeringan-rambut.jpeg" alt="Mengeringkan Rambut" style="max-width: 300px;">
-                            <div class="image-caption">Gambar 2.45 Mengeringkan Rambut (Sumber: Carolline, 2022)</div>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <h5>7. Parting Rambut Kedua</h5>
-                        <p>Parting rambut menjadi 4 bagian dengan menggunakan jepit bergerigi. Dua pada bagian depan dan dua pada bagian belakang membentuk garis simetris.</p>
-                        <div class="image-container">
-                            <img src="images/parting-rambut.jpeg" alt="Parting Rambut" style="max-width: 300px;">
-                            <div class="image-caption">Gambar 2.46 Parting Rambut (Sumber: Yani, 2022)</div>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <h5>8. Pencampuran Cat Pewarna</h5>
-                        <p>Campurkan kosmetik pewarna dengan perbandingan 1:1,5 (Cat Pewarna : Cream Developer).</p>
-                        <div class="image-container">
-                            <img src="images/pencampuran-cat.jpeg" alt="Pencampuran Cat Pewarna" style="max-width: 300px;">
-                            <div class="image-caption">Gambar 2.47 Pencampuran Cat Pewarna (Sumber: Aprilia, 2020)</div>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <h5>9. Pengaplikasian Cat Pewarna</h5>
-                        <p>Pengecatan dilakukan dengan pengambilan rambut per section.</p>
-                        <div class="image-container">
-                            <img src="images/aplikasi
+</html>
