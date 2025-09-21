@@ -121,6 +121,12 @@
             margin-bottom: 8px;
         }
 
+        /* Style untuk italics pada bahasa Inggris */
+        .english-term {
+            font-style: italic;
+            font-weight: 500;
+        }
+
         /* Style untuk bagian penting dengan lampu */
         .important-section {
             position: relative;
@@ -474,8 +480,31 @@
             line-height: 1.5;
         }
 
-        /* Summary Section */
-        .summary-section {
+        /* Video container styles */
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(70, 130, 180, 0.1);
+            border-radius: 15px;
+        }
+
+        .video-container iframe {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Video section specific styles */
+        .video-section {
             background: linear-gradient(135deg, #1E3A5F 0%, #2E5A88 50%, #4682B4 100%);
             border-radius: 20px;
             padding: 40px;
@@ -484,7 +513,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .summary-section h2 {
+        .video-section h2 {
             color: white;
             font-size: 2.2rem;
             margin-bottom: 30px;
@@ -493,54 +522,45 @@
             padding-bottom: 15px;
         }
 
-        .summary-grid {
+        .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
 
-        .summary-card {
+        .video-card {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             padding: 25px;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
         }
 
-        .summary-card h3 {
+        .video-card h3 {
             color: #FFE082;
             font-size: 1.4rem;
             margin-bottom: 15px;
-            text-align: center;
             position: relative;
             padding-left: 0;
         }
 
-        .summary-card h3:before {
+        .video-card h3:before {
             display: none;
         }
 
-        .summary-card ul {
-            list-style: none;
-            padding: 0;
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 15px;
         }
 
-        .summary-card li {
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 25px;
+        .video-card p {
             color: rgba(255, 255, 255, 0.9);
-        }
-
-        .summary-card li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #81C784;
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            margin: 0;
         }
 
         /* Tablet Responsive */
@@ -642,17 +662,21 @@
                 font-size: 1rem;
             }
 
-            .summary-section {
+            .video-section {
                 padding: 30px 20px;
             }
 
-            .summary-section h2 {
+            .video-section h2 {
                 font-size: 1.8rem;
             }
 
-            .summary-grid {
+            .video-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            .video-card iframe {
+                height: 180px;
             }
         }
 
@@ -913,29 +937,31 @@
                 font-size: 0.85rem;
             }
 
-            .summary-section {
+            .video-section {
                 padding: 20px 15px;
                 margin: 20px 0;
             }
 
-            .summary-section h2 {
+            .video-section h2 {
                 font-size: 1.5rem;
                 margin-bottom: 20px;
             }
 
-            .summary-card {
+            .video-card {
                 padding: 20px;
             }
 
-            .summary-card h3 {
+            .video-card h3 {
                 font-size: 1.2rem;
                 margin-bottom: 12px;
             }
 
-            .summary-card li {
+            .video-card iframe {
+                height: 160px;
+            }
+
+            .video-card p {
                 font-size: 0.85rem;
-                margin-bottom: 10px;
-                padding-left: 20px;
             }
         }
 
@@ -996,23 +1022,27 @@
                 font-size: 0.8rem;
             }
 
-            .summary-section {
+            .video-section {
                 padding: 15px 10px;
             }
 
-            .summary-section h2 {
+            .video-section h2 {
                 font-size: 1.3rem;
             }
 
-            .summary-card {
+            .video-card {
                 padding: 15px;
             }
 
-            .summary-card h3 {
+            .video-card h3 {
                 font-size: 1.1rem;
             }
 
-            .summary-card li {
+            .video-card iframe {
+                height: 140px;
+            }
+
+            .video-card p {
                 font-size: 0.8rem;
             }
         }
@@ -1021,17 +1051,17 @@
 <body>
     <div class="container">
         <div class="hero">
-            <h1>Materi Pewarnaan Rambut Teknik Highlight</h1>
+            <h1>Materi Pewarnaan Rambut Teknik <span class="english-term">Highlight</span></h1>
             <p>Panduan Lengkap Teknik dan Prosedur Pewarnaan Rambut</p>
         </div>
 
         <nav class="nav-menu">
             <ul>
                 <li><a href="#pengertian">Pengertian</a></li>
-                <li><a href="#teknik">Teknik Highlight</a></li>
+                <li><a href="#teknik">Teknik <span class="english-term">Highlight</span></a></li>
                 <li><a href="#alat-bahan">Alat & Bahan</a></li>
                 <li><a href="#prosedur">Prosedur</a></li>
-                <li><a href="#rangkuman">Rangkuman</a></li>
+                <li><a href="#video">Video Referensi</a></li>
             </ul>
         </nav>
 
@@ -1042,27 +1072,27 @@
                 <h3>Pengertian Pewarnaan Rambut</h3>
                 <p>Menurut Kesumawati dkk (2023) pewarnaan rambut atau pengecatan rambut adalah sebuah praktik mengubah warna rambut. Sedangkan menurut Hamsar (2023) pewarnaan rambut merupakan proses estetika yang melibatkan modifikasi warna rambut dengan bahan kimia. Konsep dasar pewarnaan rambut melibatkan pemahaman terhadap struktur rambut, terdiri dari lapisan kutikula, korteks, dan medula, di mana proses pewarnaan biasanya bertujuan memasukkan pigmen ke dalam korteks untuk mengubah warna rambut.</p>
 
-                <p>Lebih lanjut Ermavianti, dkk. (2021) menyatakan, pewarnaan adalah tindakan mengubah warna rambut. Ada tiga proses utama yang dikenal dalam pewarnaan modern, yaitu penambahan warna (hair tinting), pemudaan warna (hair lightening), dan penghilangan warna (bleaching).</p>
+                <p>Lebih lanjut Ermavianti, dkk. (2021) menyatakan, pewarnaan adalah tindakan mengubah warna rambut. Ada tiga proses utama yang dikenal dalam pewarnaan modern, yaitu penambahan warna (<span class="english-term">hair tinting</span>), pemudaan warna (<span class="english-term">hair lightening</span>), dan penghilangan warna (<span class="english-term">bleaching</span>).</p>
 
                 <h3>Tiga Proses Utama Pewarnaan Modern</h3>
                 <div class="highlight-techniques">
                     <div class="technique-card">
-                        <h4>1. Hair Tinting</h4>
+                        <h4>1. <span class="english-term">Hair Tinting</span></h4>
                         <p>Penambahan warna digunakan untuk menutupi warna rambut kelabu atau uban yang terjadi karena rambut telah kehilangan pigmen warna asli rambut</p>
                     </div>
                     <div class="technique-card">
-                        <h4>2. Hair Lightening</h4>
-                        <p>Pemudaan warna digunakan dalam pewarnaan korektif atau corrective coloring</p>
+                        <h4>2. <span class="english-term">Hair Lightening</span></h4>
+                        <p>Pemudaan warna digunakan dalam pewarnaan korektif atau <span class="english-term">corrective coloring</span></p>
                     </div>
                     <div class="technique-card">
-                        <h4>3. Bleaching</h4>
+                        <h4>3. <span class="english-term">Bleaching</span></h4>
                         <p>Digunakan untuk mempersiapkan proses perubahan warna yang lebih mendasar, dengan cara menghilangkan warna rambut baik sebagian atau seluruhnya untuk kemudian dimasukkan warna yang baru</p>
                     </div>
                 </div>
 
                 <div class="important-section">
                     <h4>Kesimpulan Penting</h4>
-                    <p>Pewarnaan rambut adalah tindakan mengubah warna rambut asli menjadi warna baru dengan menggunakan bahan kimia yang bertujuan untuk menutupi uban dan memasukkan warna yang baru. Ada tiga proses pewarnaan yang umum dikenal dalam pewarnaan rambut yaitu, penambahan warna (hair tinting), pemudaan warna (hair lightening), dan penghilangan warna (bleaching).</p>
+                    <p>Pewarnaan rambut adalah tindakan mengubah warna rambut asli menjadi warna baru dengan menggunakan bahan kimia yang bertujuan untuk menutupi uban dan memasukkan warna yang baru. Ada tiga proses pewarnaan yang umum dikenal dalam pewarnaan rambut yaitu, penambahan warna (<span class="english-term">hair tinting</span>), pemudaan warna (<span class="english-term">hair lightening</span>), dan penghilangan warna (<span class="english-term">bleaching</span>).</p>
                 </div>
 
                 <h3>Tujuan Pewarnaan Rambut</h3>
@@ -1078,59 +1108,65 @@
             </div>
 
             <div class="card" id="teknik">
-                <h2>Pengertian Teknik Highlight</h2>
-                <p><strong>Highlight</strong> adalah istilah untuk hasil warna gelap dan terang atau selang-seling. Efek ini dicapai dengan beberapa helai rambut yang lebih dahulu di-bleaching dengan foil menggunakan teknik slicing, weaving, atau menggunakan topi plastik. Highlight yang mengubah keseluruhan warna rambut dapat membuat penampilan menjadi menonjol. Sementara itu, highlight hanya di beberapa area rambut akan membuat rambut bervolume (Mustika, 2023).</p>
+                <h2>Pengertian Teknik <span class="english-term">Highlight</span></h2>
+                <p><strong><span class="english-term">Highlight</span></strong> adalah istilah untuk hasil warna gelap dan terang atau selang-seling. Efek ini dicapai dengan beberapa helai rambut yang lebih dahulu di-<span class="english-term">bleaching</span> dengan <span class="english-term">foil</span> menggunakan teknik <span class="english-term">slicing</span>, <span class="english-term">weaving</span>, atau menggunakan topi plastik. <span class="english-term">Highlight</span> yang mengubah keseluruhan warna rambut dapat membuat penampilan menjadi menonjol. Sementara itu, <span class="english-term">highlight</span> hanya di beberapa area rambut akan membuat rambut bervolume (Mustika, 2023).</p>
 
                 <p>Menurut Anata (2023) teknik mewarnai rambut dengan warna yang lebih terang dari warna asli rambut. Namun pengaplikasiannya tidak keseluruh bagian rambut, hanya pada beberapa bagian tertentu atau helaian-helaian rambut saja. Tujuannya untuk menegaskan tekstur dari model gaya rambut.</p>
 
                 <div class="important-section">
-                    <h4>Definisi Highlight</h4>
-                    <p>Pewarnaan rambut highlight adalah mewarnai rambut dengan menggunakan beberapa teknik seperti slicing dan weaving yang hanya dilakukan pada beberapa bagian tertentu dan tidak menyeluruh yang bertujuan untuk menambah volume pada rambut.</p>
+                    <h4>Definisi <span class="english-term">Highlight</span></h4>
+                    <p>Pewarnaan rambut <span class="english-term">highlight</span> adalah mewarnai rambut dengan menggunakan beberapa teknik seperti <span class="english-term">slicing</span> dan <span class="english-term">weaving</span> yang hanya dilakukan pada beberapa bagian tertentu dan tidak menyeluruh yang bertujuan untuk menambah volume pada rambut.</p>
                 </div>
 
-                <h3>1. Pewarnaan Rambut Teknik Highlight Metode Slicing</h3>
-                <p>Slicing adalah teknik pengambilan foil selapis dari bagian rambut yang ingin di highlight tanpa gerakan zig-zag. Teknik ini cepat dan mudah untuk diaplikasikan. Hasil dari teknik slicing ini berbeda-beda tergantung dari ketebalan rambut pada saat melakukan pengambilannya.</p>
+                <h3>1. Pewarnaan Rambut Teknik <span class="english-term">Highlight</span> Metode <span class="english-term">Slicing</span></h3>
+                <p><span class="english-term">Slicing</span> adalah teknik pengambilan <span class="english-term">foil</span> selapis dari bagian rambut yang ingin di <span class="english-term">highlight</span> tanpa gerakan zig-zag. Teknik ini cepat dan mudah untuk diaplikasikan. Hasil dari teknik <span class="english-term">slicing</span> ini berbeda-beda tergantung dari ketebalan rambut pada saat melakukan pengambilannya.</p>
 
-                <h4>a. Micro Slice</h4>
-                <p>Pengambilan dengan ketebalan 2mm setiap sectionnya. Efek yang dihasilkan dari metode ini adalah highlight yang halus.</p>
-                <div class="image-container">
-                    <img src="images/micro-slice.jpeg" alt="Micro Slice Technique" style="max-width: 300px;">
-                    <div class="image-caption">Gambar Micro Slice - Ketebalan 2mm</div>
+                <h4>a. <span class="english-term">Micro Slice</span></h4>
+                <p>Pengambilan dengan ketebalan 2mm setiap sectionnya. Efek yang dihasilkan dari metode ini adalah <span class="english-term">highlight</span> yang halus.</p>
+                <div class="video-container">
+                    <iframe width="300" height="534" src="https://www.youtube.com/embed/Ex7XJvB6Y8M" title="Micro Slice Technique" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-caption">Video Teknik <span class="english-term">Micro Slice</span> - Ketebalan 2mm</div>
                 </div>
 
-                <h4>b. Macro Slice</h4>
-                <p>Pengambilan dengan ketebalan 4-6mm setiap sectionnya. Efek yang dihasilkan dari metode ini highlight rambut akan lebih terlihat.</p>
-                <div class="image-container">
-                    <img src="images/macro-slice.jpeg" alt="Macro Slice Technique" style="max-width: 300px;">
-                    <div class="image-caption">Gambar Macro Slice - Ketebalan 4-6mm</div>
+                <h4>b. <span class="english-term">Macro Slice</span></h4>
+                <p>Pengambilan dengan ketebalan 4-6mm setiap sectionnya. Efek yang dihasilkan dari metode ini <span class="english-term">highlight</span> rambut akan lebih terlihat.</p>
+                <div class="video-container">
+                    <iframe width="300" height="534" src="https://www.youtube.com/embed/CQcdeitOhdw" title="Macro Slice Technique" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-caption">Video Teknik <span class="english-term">Macro Slice</span> - Ketebalan 4-6mm</div>
                 </div>
 
                 <div class="important-section">
                     <h4>Catatan Penting</h4>
-                    <p>Apabila menginginkan pengambilan dengan ketebalan yang lebih dari 6mm di setiap sectionnya, maka teknik yang digunakan adalah metode <strong>back to back</strong> (2 foil yang ditempel menjadi 1).</p>
+                    <p>Apabila menginginkan pengambilan dengan ketebalan yang lebih dari 6mm di setiap sectionnya, maka teknik yang digunakan adalah metode <strong><span class="english-term">back to back</span></strong> (2 <span class="english-term">foil</span> yang ditempel menjadi 1).</p>
                 </div>
 
-                <h3>2. Pewarnaan Rambut Teknik Highlight Metode Weaving</h3>
-                <p>Weaving adalah teknik pengambilan foil selapis dari bagian rambut yang ingin di highlight dengan melakukan gerakan naik-turun (zig-zag seperti menganyam). Efek highlight yang dihasilkan terlihat lebih natural, dan rambut tumbuh tidak terlalu terlihat. Hasil efek dari teknik weaving berbeda-beda yang dipengaruhi oleh 3 hal dalam melakukan gerakan naik-turun yaitu:</p>
+                <h3>2. Pewarnaan Rambut Teknik <span class="english-term">Highlight</span> Metode <span class="english-term">Weaving</span></h3>
+                <p><span class="english-term">Weaving</span> adalah teknik pengambilan <span class="english-term">foil</span> selapis dari bagian rambut yang ingin di <span class="english-term">highlight</span> dengan melakukan gerakan naik-turun (zig-zag seperti menganyam). Efek <span class="english-term">highlight</span> yang dihasilkan terlihat lebih natural, dan rambut tumbuh tidak terlalu terlihat. Hasil efek dari teknik <span class="english-term">weaving</span> berbeda-beda yang dipengaruhi oleh 3 hal dalam melakukan gerakan naik-turun yaitu:</p>
 
                 <div class="technique-images">
                     <div class="technique-img">
-                        <img src="images/micro-weaving.jpeg" alt="Micro Weaving">
-                        <p><strong>a. Micro</strong><br>Menghasilkan efek dinamis yang lemah</p>
+                        <div class="video-container">
+                            <iframe width="200" height="356" src="https://www.youtube.com/embed/Fv5Y_ap8Y9g" title="Micro Weaving" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <p><strong>a. <span class="english-term">Micro</span></strong><br>Menghasilkan efek dinamis yang lemah</p>
                     </div>
                     <div class="technique-img">
-                        <img src="images/medium-weaving.jpeg" alt="Medium Weaving">
-                        <p><strong>b. Medium</strong><br>Menghasilkan efek visual sedikit lebih kuat</p>
+                        <div class="video-container">
+                            <iframe width="200" height="356" src="https://www.youtube.com/embed/PY_IDAv6eM0" title="Medium Weaving" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <p><strong>b. <span class="english-term">Medium</span></strong><br>Menghasilkan efek visual sedikit lebih kuat</p>
                     </div>
                     <div class="technique-img">
-                        <img src="images/macro-weaving.jpeg" alt="Macro Weaving">
-                        <p><strong>c. Macro</strong><br>Menghasilkan efek visual yang jauh lebih terlihat</p>
+                        <div class="video-container">
+                            <iframe width="200" height="356" src="https://www.youtube.com/embed/-YKlh0iuY-k" title="Macro Weaving" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <p><strong>c. <span class="english-term">Macro</span></strong><br>Menghasilkan efek visual yang jauh lebih terlihat</p>
                     </div>
                 </div>
 
                 <div class="important-section">
-                    <h4>Aturan Kedalaman Weaving</h4>
-                    <p>Umumnya kedalaman Weaving yang digunakan sama dengan ukuran kelebarannya.</p>
+                    <h4>Aturan Kedalaman <span class="english-term">Weaving</span></h4>
+                    <p>Umumnya kedalaman <span class="english-term">Weaving</span> yang digunakan sama dengan ukuran kelebarannya.</p>
                 </div>
 
                 <div class="depth-comparison">
@@ -1163,12 +1199,12 @@
                     <div class="tool-item">
                         <img src="images/sisir-ekor.jpeg" alt="Sisir Ekor">
                         <h5>b. Sisir Ekor</h5>
-                        <p>Sisir berekor terbuat dari plastik keras yang pada bagian tangkainya panjang dan berbentuk lancip. Sisir ini merupakan alat untuk menyisir rambut pada saat rambut dikeringkan dan melakukan parting, berfungsi untuk melepas kekusutan rambut agar rambut mudah disisir dan membantu dalam melakukan parting rambut.</p>
+                        <p>Sisir berekor terbuat dari plastik keras yang pada bagian tangkainya panjang dan berbentuk lancip. Sisir ini merupakan alat untuk menyisir rambut pada saat rambut dikeringkan dan melakukan <span class="english-term">parting</span>, berfungsi untuk melepas kekusutan rambut agar rambut mudah disisir dan membantu dalam melakukan <span class="english-term">parting</span> rambut.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/jepit-bebek.jpeg" alt="Jepit Bebek Hitam">
                         <h5>c. Jepit Bebek Hitam</h5>
-                        <p>Jepit bebek hitam merupakan alat untuk menjepit rambut pada saat rambut di-parting, berfungsi untuk menahan rambut agar tidak mudah jatuh saat di-parting.</p>
+                        <p>Jepit bebek hitam merupakan alat untuk menjepit rambut pada saat rambut di-<span class="english-term">parting</span>, berfungsi untuk menahan rambut agar tidak mudah jatuh saat di-<span class="english-term">parting</span>.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/kuas-cat.jpeg" alt="Kuas Cat">
@@ -1187,8 +1223,8 @@
                     </div>
                     <div class="tool-item">
                         <img src="images/hairdryer.jpeg" alt="Hair Dryer">
-                        <h5>g. Hairdryer</h5>
-                        <p>Hairdryer terbuat dari besi tipis yang terdapat aliran listrik yang dimana berfungsi untuk mengeringkan rambut.</p>
+                        <h5>g. <span class="english-term">Hairdryer</span></h5>
+                        <p><span class="english-term">Hairdryer</span> terbuat dari besi tipis yang terdapat aliran listrik yang dimana berfungsi untuk mengeringkan rambut.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/catok-rambut.jpeg" alt="Catok Rambut">
@@ -1197,38 +1233,38 @@
                     </div>
                     <div class="tool-item">
                         <img src="images/trolly.jpeg" alt="Trolly">
-                        <h5>i. Trolly</h5>
-                        <p>Trolly berfungsi untuk meletakkan alat dan bahan pewarnaan rambut. Terbuat dari bahan plastik dalam bentuk bersusun dan memiliki roda.</p>
+                        <h5>i. <span class="english-term">Trolly</span></h5>
+                        <p><span class="english-term">Trolly</span> berfungsi untuk meletakkan alat dan bahan pewarnaan rambut. Terbuat dari bahan plastik dalam bentuk bersusun dan memiliki roda.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/timbangan-digital.jpeg" alt="Timbangan Digital">
                         <h5>j. Timbangan Digital</h5>
-                        <p>Timbangan digital digunakan untuk membantu menimbang bahan pewarna dan developer dengan presisi sehingga komposisi campuran menjadi tepat. Terbuat dari bahan plastik dan stainless dan digunakan dengan bantuan baterai.</p>
+                        <p>Timbangan digital digunakan untuk membantu menimbang bahan pewarna dan <span class="english-term">developer</span> dengan presisi sehingga komposisi campuran menjadi tepat. Terbuat dari bahan plastik dan <span class="english-term">stainless</span> dan digunakan dengan bantuan baterai.</p>
                     </div>
                     <div class="tool-item">
-                        <img src="images/shaker.png" alt="Shaker/Pengaduk">
-                        <h5>k. Shaker/Pengaduk</h5>
-                        <p>Shaker/pengaduk digunakan untuk mencampur kosmetik pewarna dan developer agar tercampur dengan rata. Terbuat dari bahan plastik yang mudah dicuci.</p>
+                        <img src="images/shaker.png" alt="Shaker">
+                        <h5>k. <span class="english-term">Shaker</span>/Pengaduk</h5>
+                        <p><span class="english-term">Shaker</span>/pengaduk digunakan untuk mencampur kosmetik pewarna dan <span class="english-term">developer</span> agar tercampur dengan rata. Terbuat dari bahan plastik yang mudah dicuci.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/spatula.jpeg" alt="Spatula">
-                        <h5>l. Spatula</h5>
-                        <p>Spatula digunakan untuk mengambil kosmetik dari wadah agar tidak bersentuhan dengan tangan secara langsung. Terbuat dari bahan plastik ringan.</p>
+                        <h5>l. <span class="english-term">Spatula</span></h5>
+                        <p><span class="english-term">Spatula</span> digunakan untuk mengambil kosmetik dari wadah agar tidak bersentuhan dengan tangan secara langsung. Terbuat dari bahan plastik ringan.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/curling-iron.png" alt="Curling Iron">
-                        <h5>m. Curling Iron/Curlintong</h5>
-                        <p>Curling iron/curlintong digunakan untuk menata rambut agar menjadi bentuk gelombang dan menambah volume pada rambut.</p>
+                        <h5>m. <span class="english-term">Curling Iron</span>/<span class="english-term">Curlintong</span></h5>
+                        <p><span class="english-term">Curling iron</span>/<span class="english-term">curlintong</span> digunakan untuk menata rambut agar menjadi bentuk gelombang dan menambah volume pada rambut.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/sisir-blow.jpeg" alt="Sisir Blow">
-                        <h5>n. Sisir Blow</h5>
-                        <p>Sisir blow berfungsi untuk membantu membentuk dan menata rambut agar tampak bervolume. Terbuat dari kayu dan memiliki bulu halus yang terbuat dari nilon.</p>
+                        <h5>n. Sisir <span class="english-term">Blow</span></h5>
+                        <p>Sisir <span class="english-term">blow</span> berfungsi untuk membantu membentuk dan menata rambut agar tampak bervolume. Terbuat dari kayu dan memiliki bulu halus yang terbuat dari nilon.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/sisir-penataan.png" alt="Sisir Penataan">
                         <h5>o. Sisir Penataan</h5>
-                        <p>Sisir penataan digunakan untuk finishing dan menata rambut agar tampak rapi setelah proses pewarnaan.</p>
+                        <p>Sisir penataan digunakan untuk <span class="english-term">finishing</span> dan menata rambut agar tampak rapi setelah proses pewarnaan.</p>
                     </div>
                 </div>
 
@@ -1237,22 +1273,22 @@
                     <div class="tool-item">
                         <img src="images/masker.jpeg" alt="Masker">
                         <h5>a. Masker</h5>
-                        <p>Masker terbuat dari bahan yang bertekstur halus dan berfungsi untuk menutupi hidung beautician.</p>
+                        <p>Masker terbuat dari bahan yang bertekstur halus dan berfungsi untuk menutupi hidung <span class="english-term">beautician</span>.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/tissu.jpeg" alt="Tissu">
-                        <h5>b. Tissu</h5>
-                        <p>Tissu berwarna putih bersih dan bertekstur halus berfungsi untuk membersihkan kulit kepala yang terkena kosmetik cat rambut.</p>
+                        <h5>b. <span class="english-term">Tissu</span></h5>
+                        <p><span class="english-term">Tissu</span> berwarna putih bersih dan bertekstur halus berfungsi untuk membersihkan kulit kepala yang terkena kosmetik cat rambut.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/sarung-tangan.jpeg" alt="Sarung Tangan">
                         <h5>c. Sarung Tangan</h5>
-                        <p>Sarung tangan yang terbuat dari plastik berfungsi untuk melindungi tangan beautician dari kosmetik pewarna rambut.</p>
+                        <p>Sarung tangan yang terbuat dari plastik berfungsi untuk melindungi tangan <span class="english-term">beautician</span> dari kosmetik pewarna rambut.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/aluminium-foil.png" alt="Aluminium Foil">
-                        <h5>d. Aluminium Foil</h5>
-                        <p>Aluminium foil berfungsi untuk mempercepat proses pewarnaan rambut.</p>
+                        <h5>d. <span class="english-term">Aluminium Foil</span></h5>
+                        <p><span class="english-term">Aluminium foil</span> berfungsi untuk mempercepat proses pewarnaan rambut.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/tong-sampah.jpeg" alt="Tong Sampah">
@@ -1270,13 +1306,13 @@
                     </div>
                     <div class="tool-item">
                         <img src="images/cape-pewarnaan.jpeg" alt="Cape Pewarnaan">
-                        <h5>b. Cape Pewarnaan</h5>
-                        <p>Cape pewarnaan terbuat dari bahan plastik berwarna hitam yang merupakan alat untuk menutupi bahu klien pada saat melakukan pewarnaan, berfungsi untuk melindungi pakaian agar tidak kotor jika terkena cat pewarna rambut.</p>
+                        <h5>b. <span class="english-term">Cape</span> Pewarnaan</h5>
+                        <p><span class="english-term">Cape</span> pewarnaan terbuat dari bahan plastik berwarna hitam yang merupakan alat untuk menutupi bahu klien pada saat melakukan pewarnaan, berfungsi untuk melindungi pakaian agar tidak kotor jika terkena cat pewarna rambut.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/apron.jpeg" alt="Apron">
-                        <h5>c. Apron</h5>
-                        <p>Apron terbuat dari bahan plastik hitam berfungsi untuk menutupi dan melindungi baju beautician.</p>
+                        <h5>c. <span class="english-term">Apron</span></h5>
+                        <p><span class="english-term">Apron</span> terbuat dari bahan plastik hitam berfungsi untuk menutupi dan melindungi baju <span class="english-term">beautician</span>.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/keset-kaki.png" alt="Keset Kaki">
@@ -1289,18 +1325,18 @@
                 <div class="tools-grid">
                     <div class="tool-item">
                         <img src="images/shampo.png" alt="Shampo">
-                        <h5>a. Shampo</h5>
-                        <p>Shampo berfungsi untuk mengangkat minyak dan kotoran yang ada pada rambut dan kulit kepala.</p>
+                        <h5>a. <span class="english-term">Shampo</span></h5>
+                        <p><span class="english-term">Shampo</span> berfungsi untuk mengangkat minyak dan kotoran yang ada pada rambut dan kulit kepala.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/conditioner.jpeg" alt="Conditioner">
-                        <h5>b. Conditioner</h5>
-                        <p>Conditioner berfungsi untuk mengurangi resiko kerusakan yang ada pada rambut.</p>
+                        <h5>b. <span class="english-term">Conditioner</span></h5>
+                        <p><span class="english-term">Conditioner</span> berfungsi untuk mengurangi resiko kerusakan yang ada pada rambut.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/bleaching.jpeg" alt="Bleaching">
-                        <h5>c. Bleaching</h5>
-                        <p>Bleaching merupakan kosmetik penghilang warna rambut yang berfungsi untuk mengubah warna pigmen rambut menjadi lebih muda.</p>
+                        <h5>c. <span class="english-term">Bleaching</span></h5>
+                        <p><span class="english-term">Bleaching</span> merupakan kosmetik penghilang warna rambut yang berfungsi untuk mengubah warna pigmen rambut menjadi lebih muda.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/kosmetik-pewarna.png" alt="Kosmetik Pewarna Rambut">
@@ -1309,14 +1345,14 @@
                     </div>
                     <div class="tool-item">
                         <img src="images/peroxide.jpeg" alt="Peroxide/Cream Developer">
-                        <h5>e. Peroxide/Krim Developer</h5>
-                        <p>Peroxide/Krim Developer digunakan sebagai campuran bleaching dan krim pewarna rambut.</p>
+                        <h5>e. <span class="english-term">Peroxide</span>/Krim <span class="english-term">Developer</span></h5>
+                        <p><span class="english-term">Peroxide</span>/Krim <span class="english-term">Developer</span> digunakan sebagai campuran <span class="english-term">bleaching</span> dan krim pewarna rambut.</p>
                     </div>
                 </div>
             </div>
 
             <div class="card" id="prosedur">
-                <h2>Proses Kerja Pewarnaan Rambut Highlight</h2>
+                <h2>Proses Kerja Pewarnaan Rambut <span class="english-term">Highlight</span></h2>
                 
                 <h3>Persiapan Sebelum Pewarnaan</h3>
                 <div class="process-steps">
@@ -1343,22 +1379,22 @@
                             <li>Memberikan ekspresi wajah yang ramah ketika berhadapan dengan pelanggan</li>
                             <li>Menjaga sopan santun dalam berkomunikasi dengan pelanggan</li>
                             <li>Menyiapkan mental dan kepercayaan diri</li>
-                            <li>Memakai celemek/apron saat melakukan proses pewarnaan rambut</li>
+                            <li>Memakai celemek/<span class="english-term">apron</span> saat melakukan proses pewarnaan rambut</li>
                         </ol>
                     </div>
                     
                     <div class="process-step">
                         <h5>4. Persiapan Pelanggan</h5>
-                        <p>Persiapan pelanggan dilakukan sebelum melakukan proses pewarnaan. Persiapan yang digunakan meliputi penggunaan cape pada pelanggan agar tidak mengotori baju yang dikenakan dan memasangkan penutup telinga untuk melindungi telinga pelanggan. Persiapan pelanggan juga menginformasikan warna yang akan diaplikasikan pada rambut, tes kepekaan kulit, dan hasil pewarnaan pada rambut pelanggan.</p>
+                        <p>Persiapan pelanggan dilakukan sebelum melakukan proses pewarnaan. Persiapan yang digunakan meliputi penggunaan <span class="english-term">cape</span> pada pelanggan agar tidak mengotori baju yang dikenakan dan memasangkan penutup telinga untuk melindungi telinga pelanggan. Persiapan pelanggan juga menginformasikan warna yang akan diaplikasikan pada rambut, tes kepekaan kulit, dan hasil pewarnaan pada rambut pelanggan.</p>
                     </div>
                     
                     <div class="process-step">
-                        <h5>5. Melakukan Tes Kepekaan Kulit (Patch Test)</h5>
+                        <h5>5. Melakukan Tes Kepekaan Kulit (<span class="english-term">Patch Test</span>)</h5>
                         <p>Terlebih dahulu untuk menghindari seperti gatal atau alergi kulit. Pertama kulit yang selebar bulatan telur dibelakang telinga dibersihkan dengan kapas. Cara membersihkannya jangan ditekan untuk menghindari lecet pada kulit tetapi gosok perlahan satu atau dua kali. Kemudian, oleskan pewarna rambut yang telah dibuat dengan air bersih, lalu oleskan pada kulit yang telah dibersihkan sebelumnya. Biarkan selama 24 jam, jangan dicuci atau dibersihkan.</p>
                         
                         <div class="important-section">
                             <h4>Penting untuk Diketahui</h4>
-                            <p>Pada kulit sensitif, reaksi alergi yang diamati yaitu kulit merah di sekitar pewarna rambut yang menempel pada kulit di area tengah atau permukaan yang ditempelkan cat. Kulit yang alergi akan muncul bintik-bintik panas yang menyengat (miliaria) dan akan pecah apabila digaruk. Alergi yang disebabkan oleh pewarna rambut akan terasa sangat gatal. Hasil patch test diatas positif akan menimbulkan reaksi alergi yang artinya pewarnaan rambut tidak dapat dilakukan. Patch test yang tidak menimbulkan reaksi alergi pada kulit disebut negatif karena tidak terdapat perubahan pada kulit setelah 24 jam. Jadi pewarnaan rambut dapat dilanjutkan.</p>
+                            <p>Pada kulit sensitif, reaksi alergi yang diamati yaitu kulit merah di sekitar pewarna rambut yang menempel pada kulit di area tengah atau permukaan yang ditempelkan cat. Kulit yang alergi akan muncul bintik-bintik panas yang menyengat (miliaria) dan akan pecah apabila digaruk. Alergi yang disebabkan oleh pewarna rambut akan terasa sangat gatal. Hasil <span class="english-term">patch test</span> diatas positif akan menimbulkan reaksi alergi yang artinya pewarnaan rambut tidak dapat dilakukan. <span class="english-term">Patch test</span> yang tidak menimbulkan reaksi alergi pada kulit disebut negatif karena tidak terdapat perubahan pada kulit setelah 24 jam. Jadi pewarnaan rambut dapat dilanjutkan.</p>
                         </div>
                     </div>
                 </div>
@@ -1373,29 +1409,29 @@
                     </div>
                     
                     <div class="process-step">
-                        <h5>2. Menyisir dan Parting Rambut</h5>
-                        <p>Menyisir rambut ke depan dan ke belakang, kemudian samping kiri dan kanan. Setelah itu rambut di parting atau dibagi menjadi empat bagian, dua bagian depan dan dua bagian belakang membentuk garis simetris.</p>
+                        <h5>2. Menyisir dan <span class="english-term">Parting</span> Rambut</h5>
+                        <p>Menyisir rambut ke depan dan ke belakang, kemudian samping kiri dan kanan. Setelah itu rambut di <span class="english-term">parting</span> atau dibagi menjadi empat bagian, dua bagian depan dan dua bagian belakang membentuk garis simetris.</p>
                         <div class="image-container">
                             <img src="images/parting-rambut.jpeg" alt="Parting Rambut" style="max-width: 300px;">
-                            <div class="image-caption">Gambar 2.41 Parting Rambut (Sumber: Yani, 2022)</div>
+                            <div class="image-caption">Gambar 2.41 <span class="english-term">Parting</span> Rambut (Sumber: Yani, 2022)</div>
                         </div>
                     </div>
                     
                     <div class="process-step">
-                        <h5>3. Pencampuran Bleaching</h5>
-                        <p>Petunjuk pewarnaan hendaknya diperhatikan untuk menghindari kegagalan. Campurkan kosmetik bleaching powder dengan cream developer dengan menggunakan 40gr bleaching powder dan 80ml cream developer 20 volume (6%).</p>
+                        <h5>3. Pencampuran <span class="english-term">Bleaching</span></h5>
+                        <p>Petunjuk pewarnaan hendaknya diperhatikan untuk menghindari kegagalan. Campurkan kosmetik <span class="english-term">bleaching powder</span> dengan <span class="english-term">cream developer</span> dengan menggunakan 40gr <span class="english-term">bleaching powder</span> dan 80ml <span class="english-term">cream developer</span> 20 volume (6%).</p>
                         <div class="image-container">
                             <img src="images/pencampuran-bleaching.jpeg" alt="Pencampuran Bleaching" style="max-width: 300px;">
-                            <div class="image-caption">Gambar 2.42 Pencampuran Bleaching (Sumber: Ermavianti, 2020)</div>
+                            <div class="image-caption">Gambar 2.42 Pencampuran <span class="english-term">Bleaching</span> (Sumber: Ermavianti, 2020)</div>
                         </div>
                     </div>
                     
                     <div class="process-step">
-                        <h5>4. Pengaplikasian Bleaching</h5>
-                        <p>Pengaplikasian cream bleaching yang sudah diaduk terlebih dahulu dengan menggunakan cream developer 20 volume. Kemudian aplikasikan pada setiap section rambut dengan teknik highlight sampai dengan selesai. Diamkan selama 30 menit dan lakukan pengecekan rambut untuk mengetahui hasil warnanya.</p>
+                        <h5>4. Pengaplikasian <span class="english-term">Bleaching</span></h5>
+                        <p>Pengaplikasian <span class="english-term">cream bleaching</span> yang sudah diaduk terlebih dahulu dengan menggunakan <span class="english-term">cream developer</span> 20 volume. Kemudian aplikasikan pada setiap section rambut dengan teknik <span class="english-term">highlight</span> sampai dengan selesai. Diamkan selama 30 menit dan lakukan pengecekan rambut untuk mengetahui hasil warnanya.</p>
                         <div class="image-container">
                             <img src="images/aplikasi-bleaching.jpeg" alt="Pengaplikasian Bleaching Teknik Highlight" style="max-width: 300px;">
-                            <div class="image-caption">Gambar 2.43 Pengaplikasian Bleaching Teknik Highlight (Sumber: Ermavianti, 2020)</div>
+                            <div class="image-caption">Gambar 2.43 Pengaplikasian <span class="english-term">Bleaching</span> Teknik <span class="english-term">Highlight</span> (Sumber: Ermavianti, 2020)</div>
                         </div>
                     </div>
                     
@@ -1410,7 +1446,7 @@
                     
                     <div class="process-step">
                         <h5>6. Pengeringan Rambut</h5>
-                        <p>Keringkan rambut dengan menggunakan hair dryer.</p>
+                        <p>Keringkan rambut dengan menggunakan <span class="english-term">hair dryer</span>.</p>
                         <div class="image-container">
                             <img src="images/pengeringan-rambut.jpeg" alt="Mengeringkan Rambut" style="max-width: 300px;">
                             <div class="image-caption">Gambar 2.45 Mengeringkan Rambut (Sumber: Carolline, 2022)</div>
@@ -1418,17 +1454,17 @@
                     </div>
                     
                     <div class="process-step">
-                        <h5>7. Parting Rambut Kedua</h5>
-                        <p>Parting rambut menjadi 4 bagian dengan menggunakan jepit bergerigi. Dua pada bagian depan dan dua pada bagian belakang membentuk garis simetris.</p>
+                        <h5>7. <span class="english-term">Parting</span> Rambut Kedua</h5>
+                        <p><span class="english-term">Parting</span> rambut menjadi 4 bagian dengan menggunakan jepit bergerigi. Dua pada bagian depan dan dua pada bagian belakang membentuk garis simetris.</p>
                         <div class="image-container">
                             <img src="images/parting-rambut.jpeg" alt="Parting Rambut" style="max-width: 300px;">
-                            <div class="image-caption">Gambar 2.46 Parting Rambut (Sumber: Yani, 2022)</div>
+                            <div class="image-caption">Gambar 2.46 <span class="english-term">Parting</span> Rambut (Sumber: Yani, 2022)</div>
                         </div>
                     </div>
                     
                     <div class="process-step">
                         <h5>8. Pencampuran Cat Pewarna</h5>
-                        <p>Campurkan kosmetik pewarna dengan perbandingan 1:1,5 (Cat Pewarna : Cream Developer).</p>
+                        <p>Campurkan kosmetik pewarna dengan perbandingan 1:1,5 (Cat Pewarna : <span class="english-term">Cream Developer</span>).</p>
                         <div class="image-container">
                             <img src="images/pencampuran-cat.jpeg" alt="Pencampuran Cat Pewarna" style="max-width: 300px;">
                             <div class="image-caption">Gambar 2.47 Pencampuran Cat Pewarna (Sumber: Aprilia, 2020)</div>
@@ -1450,8 +1486,8 @@
                     </div>
                     
                     <div class="process-step">
-                        <h5>11. Pencucian Akhir dengan Conditioner</h5>
-                        <p>Cuci rambut dengan menggunakan conditioner hingga bersih.</p>
+                        <h5>11. Pencucian Akhir dengan <span class="english-term">Conditioner</span></h5>
+                        <p>Cuci rambut dengan menggunakan <span class="english-term">conditioner</span> hingga bersih.</p>
                         <div class="image-container">
                             <img src="images/pencucian-rambut.jpeg" alt="Pencucian Rambut" style="max-width: 300px;">
                             <div class="image-caption">Gambar 2.49 Pencucian Rambut (Sumber: Anata, 2022)</div>
@@ -1460,7 +1496,7 @@
                     
                     <div class="process-step">
                         <h5>12. Pengeringan Akhir</h5>
-                        <p>Keringkan rambut dengan menggunakan hair dryer.</p>
+                        <p>Keringkan rambut dengan menggunakan <span class="english-term">hair dryer</span>.</p>
                         <div class="image-container">
                             <img src="images/pengeringan-rambut.jpeg" alt="Mengeringkan Rambut" style="max-width: 300px;">
                             <div class="image-caption">Gambar 2.50 Mengeringkan Rambut (Sumber: Carolline, 2022)</div>
@@ -1469,7 +1505,7 @@
                     
                     <div class="process-step">
                         <h5>13. Penataan Rambut</h5>
-                        <p>Lakukan penataan rambut dengan menggunakan catok atau alat-alat styling lainnya untuk memperindah hasil akhir.</p>
+                        <p>Lakukan penataan rambut dengan menggunakan catok atau alat-alat <span class="english-term">styling</span> lainnya untuk memperindah hasil akhir.</p>
                         <div class="image-container">
                             <img src="images/penataan-rambut.jpeg" alt="Penataan Rambut" style="max-width: 300px;">
                             <div class="image-caption">Gambar 2.51 Penataan (Sumber: Aprilia, 2020)</div>
@@ -1478,7 +1514,7 @@
                     
                     <div class="process-step">
                         <h5>14. Hasil Akhir</h5>
-                        <p>Hasil akhir pewarnaan rambut teknik highlight telah selesai.</p>
+                        <p>Hasil akhir pewarnaan rambut teknik <span class="english-term">highlight</span> telah selesai.</p>
                         <div class="image-container">
                             <img src="images/hasil-akhir-highlight.jpeg" alt="Hasil Akhir Pewarnaan Rambut Highlight" style="max-width: 400px;">
                             <div class="image-caption">Gambar 2.52 Hasil Akhir (Sumber: Aziza, 2021)</div>
@@ -1488,15 +1524,29 @@
 
                 <div class="important-section">
                     <h4>Tips Hasil Optimal</h4>
-                    <p>Untuk mendapatkan hasil highlight yang maksimal, pastikan semua langkah dilakukan dengan teliti dan waktu tunggu dipatuhi sesuai petunjuk. Selalu lakukan patch test 24 jam sebelum pewarnaan untuk menghindari reaksi alergi, dan pastikan semua peralatan dalam keadaan bersih dan steril.</p>
+                    <p>Untuk mendapatkan hasil <span class="english-term">highlight</span> yang maksimal, pastikan semua langkah dilakukan dengan teliti dan waktu tunggu dipatuhi sesuai petunjuk. Selalu lakukan <span class="english-term">patch test</span> 24 jam sebelum pewarnaan untuk menghindari reaksi alergi, dan pastikan semua peralatan dalam keadaan bersih dan steril.</p>
                 </div>
             </div>
         </div>
 
+        <div class="video-section" id="video">
+            <h2>Video Referensi Teknik <span class="english-term">Highlight</span></h2>
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; margin-bottom: 30px;">
+                Pelajari lebih lanjut melalui video demonstrasi lengkap teknik pewarnaan rambut <span class="english-term">highlight</span>
+            </p>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <h3>Tutorial Lengkap Pewarnaan <span class="english-term">Highlight</span></h3>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/CYdLuJT0fGk" title="Tutorial Lengkap Pewarnaan Highlight" frameborder="0" allowfullscreen></iframe>
+                    <p>Video panduan lengkap proses pewarnaan rambut teknik <span class="english-term">highlight</span> dari persiapan hingga hasil akhir. Cocok untuk pemula yang ingin mempelajari teknik dasar pewarnaan <span class="english-term">highlight</span>.</p>
+                </div>
+            </div>
+        </div>
         
         <div class="hero">
             <h2 style="color: white; border: none; margin: 0; font-size: 1.5rem;">Terima Kasih</h2>
-            <p style="margin: 10px 0 0 0;">Materi Pewarnaan Rambut Teknik Highlight telah selesai dipelajari</p>
+            <p style="margin: 10px 0 0 0;">Materi Pewarnaan Rambut Teknik <span class="english-term">Highlight</span> telah selesai dipelajari</p>
         </div>
     </div>
 
