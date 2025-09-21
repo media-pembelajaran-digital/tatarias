@@ -121,9 +121,10 @@
             margin-bottom: 8px;
         }
 
-        /* Style untuk italics pada bahasa Inggris */
+        /* Style untuk istilah bahasa Inggris */
         .english-term {
             font-style: italic;
+            color: #2E5A88;
             font-weight: 500;
         }
 
@@ -480,30 +481,7 @@
             line-height: 1.5;
         }
 
-        /* Video container styles */
-        .video-container {
-            text-align: center;
-            margin: 20px 0;
-            padding: 15px;
-            background: rgba(70, 130, 180, 0.1);
-            border-radius: 15px;
-        }
-
-        .video-container iframe {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .video-caption {
-            margin-top: 10px;
-            font-style: italic;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Video section specific styles */
+        /* Video Section Styling */
         .video-section {
             background: linear-gradient(135deg, #1E3A5F 0%, #2E5A88 50%, #4682B4 100%);
             border-radius: 20px;
@@ -524,7 +502,7 @@
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin-top: 30px;
         }
@@ -550,17 +528,60 @@
             display: none;
         }
 
-        .video-card iframe {
+        .video-embed {
             width: 100%;
             height: 200px;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin: 15px 0;
         }
 
-        .video-card p {
+        .video-description {
             color: rgba(255, 255, 255, 0.9);
             font-size: 0.95rem;
-            margin: 0;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        /* YouTube Short Video Embedding */
+        .youtube-short {
+            position: relative;
+            width: 100%;
+            max-width: 280px;
+            height: 500px;
+            margin: 20px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .youtube-short iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .video-technique-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-technique-section h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .inline-video {
+            max-width: 320px;
+            height: 180px;
+            margin: 15px auto;
+            display: block;
+            border-radius: 10px;
         }
 
         /* Tablet Responsive */
@@ -675,8 +696,9 @@
                 gap: 20px;
             }
 
-            .video-card iframe {
-                height: 180px;
+            .youtube-short {
+                height: 400px;
+                max-width: 250px;
             }
         }
 
@@ -956,12 +978,14 @@
                 margin-bottom: 12px;
             }
 
-            .video-card iframe {
-                height: 160px;
+            .youtube-short {
+                height: 350px;
+                max-width: 200px;
             }
 
-            .video-card p {
-                font-size: 0.85rem;
+            .inline-video {
+                max-width: 280px;
+                height: 160px;
             }
         }
 
@@ -1038,12 +1062,9 @@
                 font-size: 1.1rem;
             }
 
-            .video-card iframe {
-                height: 140px;
-            }
-
-            .video-card p {
-                font-size: 0.8rem;
+            .youtube-short {
+                height: 300px;
+                max-width: 180px;
             }
         }
     </style>
@@ -1061,7 +1082,7 @@
                 <li><a href="#teknik">Teknik <span class="english-term">Highlight</span></a></li>
                 <li><a href="#alat-bahan">Alat & Bahan</a></li>
                 <li><a href="#prosedur">Prosedur</a></li>
-                <li><a href="#video">Video Referensi</a></li>
+                <li><a href="#video-referensi">Video Referensi</a></li>
             </ul>
         </nav>
 
@@ -1123,16 +1144,26 @@
 
                 <h4>a. <span class="english-term">Micro Slice</span></h4>
                 <p>Pengambilan dengan ketebalan 2mm setiap sectionnya. Efek yang dihasilkan dari metode ini adalah <span class="english-term">highlight</span> yang halus.</p>
-                <div class="video-container">
-                    <iframe width="300" height="534" src="https://www.youtube.com/embed/Ex7XJvB6Y8M" title="Micro Slice Technique" frameborder="0" allowfullscreen></iframe>
-                    <div class="video-caption">Video Teknik <span class="english-term">Micro Slice</span> - Ketebalan 2mm</div>
+                <div class="image-container">
+                    <img src="images/micro-slice.jpeg" alt="Micro Slice Technique" style="max-width: 300px;">
+                    <div class="image-caption">Gambar <span class="english-term">Micro Slice</span> - Ketebalan 2mm</div>
+                </div>
+
+                <div class="video-technique-section">
+                    <h4>Video Demonstrasi <span class="english-term">Micro Slice</span></h4>
+                    <iframe class="inline-video" src="https://www.youtube.com/embed/Ex7XJvB6Y8M" title="Micro Slice Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
                 <h4>b. <span class="english-term">Macro Slice</span></h4>
                 <p>Pengambilan dengan ketebalan 4-6mm setiap sectionnya. Efek yang dihasilkan dari metode ini <span class="english-term">highlight</span> rambut akan lebih terlihat.</p>
-                <div class="video-container">
-                    <iframe width="300" height="534" src="https://www.youtube.com/embed/CQcdeitOhdw" title="Macro Slice Technique" frameborder="0" allowfullscreen></iframe>
-                    <div class="video-caption">Video Teknik <span class="english-term">Macro Slice</span> - Ketebalan 4-6mm</div>
+                <div class="image-container">
+                    <img src="images/macro-slice.jpeg" alt="Macro Slice Technique" style="max-width: 300px;">
+                    <div class="image-caption">Gambar <span class="english-term">Macro Slice</span> - Ketebalan 4-6mm</div>
+                </div>
+
+                <div class="video-technique-section">
+                    <h4>Video Demonstrasi <span class="english-term">Macro Slicing</span></h4>
+                    <iframe class="inline-video" src="https://www.youtube.com/embed/CQcdeitOhdw" title="Macro Slicing Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
                 <div class="important-section">
@@ -1145,23 +1176,32 @@
 
                 <div class="technique-images">
                     <div class="technique-img">
-                        <div class="video-container">
-                            <iframe width="200" height="356" src="https://www.youtube.com/embed/Fv5Y_ap8Y9g" title="Micro Weaving" frameborder="0" allowfullscreen></iframe>
-                        </div>
+                        <img src="images/micro-weaving.jpeg" alt="Micro Weaving">
                         <p><strong>a. <span class="english-term">Micro</span></strong><br>Menghasilkan efek dinamis yang lemah</p>
                     </div>
                     <div class="technique-img">
-                        <div class="video-container">
-                            <iframe width="200" height="356" src="https://www.youtube.com/embed/PY_IDAv6eM0" title="Medium Weaving" frameborder="0" allowfullscreen></iframe>
-                        </div>
+                        <img src="images/medium-weaving.jpeg" alt="Medium Weaving">
                         <p><strong>b. <span class="english-term">Medium</span></strong><br>Menghasilkan efek visual sedikit lebih kuat</p>
                     </div>
                     <div class="technique-img">
-                        <div class="video-container">
-                            <iframe width="200" height="356" src="https://www.youtube.com/embed/-YKlh0iuY-k" title="Macro Weaving" frameborder="0" allowfullscreen></iframe>
-                        </div>
+                        <img src="images/macro-weaving.jpeg" alt="Macro Weaving">
                         <p><strong>c. <span class="english-term">Macro</span></strong><br>Menghasilkan efek visual yang jauh lebih terlihat</p>
                     </div>
+                </div>
+
+                <div class="video-technique-section">
+                    <h4>Video Demonstrasi <span class="english-term">Micro Wave</span></h4>
+                    <iframe class="inline-video" src="https://www.youtube.com/embed/Fv5Y_ap8Y9g" title="Micro Wave Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-technique-section">
+                    <h4>Video Demonstrasi <span class="english-term">Medium Wave</span></h4>
+                    <iframe class="inline-video" src="https://www.youtube.com/embed/PY_IDAv6eM0" title="Medium Wave Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-technique-section">
+                    <h4>Video Demonstrasi <span class="english-term">Macro Wave</span></h4>
+                    <iframe class="inline-video" src="https://www.youtube.com/embed/-YKlh0iuY-k" title="Macro Wave Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
                 <div class="important-section">
@@ -1277,8 +1317,8 @@
                     </div>
                     <div class="tool-item">
                         <img src="images/tissu.jpeg" alt="Tissu">
-                        <h5>b. <span class="english-term">Tissu</span></h5>
-                        <p><span class="english-term">Tissu</span> berwarna putih bersih dan bertekstur halus berfungsi untuk membersihkan kulit kepala yang terkena kosmetik cat rambut.</p>
+                        <h5>b. Tissu</h5>
+                        <p>Tissu berwarna putih bersih dan bertekstur halus berfungsi untuk membersihkan kulit kepala yang terkena kosmetik cat rambut.</p>
                     </div>
                     <div class="tool-item">
                         <img src="images/sarung-tangan.jpeg" alt="Sarung Tangan">
@@ -1428,7 +1468,7 @@
                     
                     <div class="process-step">
                         <h5>4. Pengaplikasian <span class="english-term">Bleaching</span></h5>
-                        <p>Pengaplikasian <span class="english-term">cream bleaching</span> yang sudah diaduk terlebih dahulu dengan menggunakan <span class="english-term">cream developer</span> 20 volume. Kemudian aplikasikan pada setiap section rambut dengan teknik <span class="english-term">highlight</span> sampai dengan selesai. Diamkan selama 30 menit dan lakukan pengecekan rambut untuk mengetahui hasil warnanya.</p>
+                        <p>Pengaplikasian <span class="english-term">cream bleaching</span> yang sudah diaduk terlebih dahulu dengan menggunakan <span class="english-term">cream developer</span> 20 volume. Kemudian aplikasikan pada setiap <span class="english-term">section</span> rambut dengan teknik <span class="english-term">highlight</span> sampai dengan selesai. Diamkan selama 30 menit dan lakukan pengecekan rambut untuk mengetahui hasil warnanya.</p>
                         <div class="image-container">
                             <img src="images/aplikasi-bleaching.jpeg" alt="Pengaplikasian Bleaching Teknik Highlight" style="max-width: 300px;">
                             <div class="image-caption">Gambar 2.43 Pengaplikasian <span class="english-term">Bleaching</span> Teknik <span class="english-term">Highlight</span> (Sumber: Ermavianti, 2020)</div>
@@ -1473,7 +1513,7 @@
                     
                     <div class="process-step">
                         <h5>9. Pengaplikasian Cat Pewarna</h5>
-                        <p>Pengecatan dilakukan dengan pengambilan rambut per section.</p>
+                        <p>Pengecatan dilakukan dengan pengambilan rambut per <span class="english-term">section</span>.</p>
                         <div class="image-container">
                             <img src="images/aplikasi-cat.jpeg" alt="Pengaplikasian Cat Pada Rambut" style="max-width: 300px;">
                             <div class="image-caption">Gambar 2.48 Pengaplikasian Cat Pada Rambut (Sumber: Aprilia, 2020)</div>
@@ -1529,18 +1569,68 @@
             </div>
         </div>
 
-        <div class="video-section" id="video">
-            <h2>Video Referensi Teknik <span class="english-term">Highlight</span></h2>
+        <!-- Video Referensi Section -->
+        <div class="video-section" id="video-referensi">
+            <h2>Video Referensi</h2>
             <p style="text-align: center; color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; margin-bottom: 30px;">
-                Pelajari lebih lanjut melalui video demonstrasi lengkap teknik pewarnaan rambut <span class="english-term">highlight</span>
+                Koleksi video demonstrasi teknik pewarnaan rambut <span class="english-term">highlight</span> untuk membantu pemahaman praktis
             </p>
             
+            <!-- Video Tutorial Lengkap -->
+            <div class="video-card" style="margin-bottom: 40px;">
+                <h3>Tutorial Lengkap Pewarnaan Rambut <span class="english-term">Highlight</span></h3>
+                <iframe class="video-embed" src="https://www.youtube.com/embed/CYdLuJT0fGk" title="Tutorial Lengkap Hair Highlighting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-description">
+                    Video tutorial komprehensif yang menjelaskan seluruh proses pewarnaan rambut teknik <span class="english-term">highlight</span> dari persiapan hingga hasil akhir. Video ini mencakup teknik-teknik dasar yang telah dipelajari dalam materi.
+                </div>
+            </div>
+
+            <!-- Grid untuk video teknik -->
             <div class="video-grid">
                 <div class="video-card">
-                    <h3>Tutorial Lengkap Pewarnaan <span class="english-term">Highlight</span></h3>
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/CYdLuJT0fGk" title="Tutorial Lengkap Pewarnaan Highlight" frameborder="0" allowfullscreen></iframe>
-                    <p>Video panduan lengkap proses pewarnaan rambut teknik <span class="english-term">highlight</span> dari persiapan hingga hasil akhir. Cocok untuk pemula yang ingin mempelajari teknik dasar pewarnaan <span class="english-term">highlight</span>.</p>
+                    <h3>Teknik <span class="english-term">Micro Slice</span></h3>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/Ex7XJvB6Y8M" title="Micro Slice Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-description">
+                        Demonstrasi teknik <span class="english-term">micro slice</span> dengan ketebalan 2mm yang menghasilkan efek <span class="english-term">highlight</span> yang halus dan natural.
+                    </div>
                 </div>
+
+                <div class="video-card">
+                    <h3>Teknik <span class="english-term">Macro Slicing</span></h3>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/CQcdeitOhdw" title="Macro Slicing Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-description">
+                        Teknik <span class="english-term">macro slicing</span> dengan ketebalan 4-6mm yang menghasilkan efek <span class="english-term">highlight</span> yang lebih terlihat dan kontras.
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <h3>Teknik <span class="english-term">Micro Wave</span></h3>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/Fv5Y_ap8Y9g" title="Micro Wave Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-description">
+                        Teknik <span class="english-term">weaving micro</span> yang menghasilkan efek dinamis yang lemah dengan gerakan zig-zag halus.
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <h3>Teknik <span class="english-term">Medium Wave</span></h3>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/PY_IDAv6eM0" title="Medium Wave Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-description">
+                        Teknik <span class="english-term">weaving medium</span> yang menghasilkan efek visual yang sedikit lebih kuat dari teknik <span class="english-term">micro</span>.
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <h3>Teknik <span class="english-term">Macro Wave</span></h3>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/-YKlh0iuY-k" title="Macro Wave Technique" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-description">
+                        Teknik <span class="english-term">weaving macro</span> yang menghasilkan efek visual yang jauh lebih terlihat dan dramatis.
+                    </div>
+                </div>
+            </div>
+
+            <div class="important-section" style="background: rgba(255, 255, 255, 0.1); color: white;">
+                <h4 style="color: #FFE082;">Catatan Penting Video</h4>
+                <p style="color: rgba(255, 255, 255, 0.9);">Semua video di atas merupakan referensi praktis yang menunjukkan aplikasi nyata dari teori yang telah dipelajari. Perhatikan teknik pengambilan rambut, sudut <span class="english-term">foil</span>, dan gerakan tangan yang dilakukan oleh praktisi profesional.</p>
             </div>
         </div>
         
