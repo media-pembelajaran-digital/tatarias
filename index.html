@@ -43,6 +43,13 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero h2 {
+            color: white;
+            border: none;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
         .hero p {
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.9);
@@ -121,12 +128,10 @@
             margin-bottom: 8px;
         }
 
-        /* Style untuk istilah bahasa Inggris */
         .english-term {
             font-style: italic;
         }
 
-        /* Style untuk bagian penting dengan lampu */
         .important-section {
             position: relative;
             background: linear-gradient(45deg, #FFF9C4, #FFFDE7);
@@ -302,44 +307,6 @@
             font-weight: 600;
         }
 
-        .warning-box {
-            background: linear-gradient(45deg, #FFE4B5, #DEB887);
-            border-left: 5px solid #D2691E;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(210, 105, 30, 0.2);
-        }
-
-        .warning-box h4 {
-            color: #8B4513;
-            margin-bottom: 10px;
-        }
-
-        .warning-box p {
-            color: #654321;
-            margin: 0;
-        }
-
-        .info-box {
-            background: linear-gradient(45deg, #E6F3FF, #B3D9FF);
-            border-left: 5px solid #4682B4;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.2);
-        }
-
-        .info-box h4 {
-            color: #2E5A88;
-            margin-bottom: 10px;
-        }
-
-        .info-box p {
-            color: #1E3A5F;
-            margin: 0;
-        }
-
         .nav-menu {
             position: sticky;
             top: 20px;
@@ -442,16 +409,6 @@
             transition: transform 0.3s ease;
         }
 
-        .depth-item h5 {
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .depth-item p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.95rem;
-        }
-
         .depth-item:hover {
             transform: translateY(-5px);
         }
@@ -479,7 +436,6 @@
             line-height: 1.5;
         }
 
-        /* Video Section Styling */
         .video-section {
             background: linear-gradient(135deg, #1E3A5F 0%, #2E5A88 50%, #4682B4 100%);
             border-radius: 20px;
@@ -496,13 +452,6 @@
             text-align: center;
             border-bottom: 3px solid rgba(255, 255, 255, 0.3);
             padding-bottom: 15px;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
         }
 
         .video-card {
@@ -528,7 +477,7 @@
 
         .video-embed {
             width: 100%;
-            height: 200px;
+            height: 400px;
             border-radius: 10px;
             margin: 15px 0;
         }
@@ -540,530 +489,57 @@
             margin-top: 10px;
         }
 
-        /* YouTube Short Video Embedding */
-        .youtube-short {
-            position: relative;
-            width: 100%;
-            max-width: 280px;
-            height: 500px;
-            margin: 20px auto;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .youtube-short iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 15px;
-        }
-
-        .video-technique-section {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 25px;
-            margin: 25px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .video-technique-section h4 {
-            color: white;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .inline-video {
-            max-width: 320px;
-            height: 180px;
-            margin: 15px auto;
-            display: block;
+        .video-reference {
+            background: rgba(70, 130, 180, 0.1);
+            border-left: 4px solid #4682B4;
             border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
         }
 
-        /* Tablet Responsive */
+        .video-reference h5 {
+            color: #2E5A88;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .video-reference p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        .video-reference a {
+            color: #4682B4;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .video-reference a:hover {
+            text-decoration: underline;
+        }
+
+        .video-author {
+            font-style: italic;
+            color: #888;
+        }
+
         @media screen and (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            .hero {
-                padding: 40px 20px;
-                margin-bottom: 30px;
-                border-radius: 15px;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .card {
-                padding: 20px;
-                margin-bottom: 20px;
-                border-radius: 15px;
-            }
-
-            .card h2 {
-                font-size: 1.6rem;
-            }
-
-            .card h3 {
-                font-size: 1.3rem;
-            }
-
-            .card h4 {
-                font-size: 1.1rem;
-            }
-            
-            .nav-menu {
-                border-radius: 15px;
-                padding: 20px;
-                position: relative;
-                top: auto;
-            }
-
-            .nav-menu ul {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .highlight-techniques {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .technique-card {
-                padding: 20px;
-            }
-
-            .tools-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 15px;
-            }
-
-            .tool-item {
-                padding: 15px;
-            }
-
-            .process-step {
-                padding: 20px;
-                margin: 15px 0;
-            }
-
-            .process-step:before {
-                left: -12px;
-                top: 15px;
-                width: 25px;
-                height: 25px;
-                font-size: 0.9rem;
-            }
-
-            .important-section h4 {
-                padding-left: 35px;
-            }
-
-            .important-section h4::before {
-                font-size: 1.2rem;
-            }
-
-            .numbered-list li {
-                padding-left: 45px;
-            }
-
-            .numbered-list li::before {
-                width: 30px;
-                height: 30px;
-                font-size: 1rem;
-            }
-
-            .video-section {
-                padding: 30px 20px;
-            }
-
-            .video-section h2 {
-                font-size: 1.8rem;
-            }
-
-            .video-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .youtube-short {
-                height: 400px;
-                max-width: 250px;
-            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .card { padding: 20px; }
+            .card h2 { font-size: 1.6rem; }
+            .nav-menu { border-radius: 15px; padding: 20px; position: relative; top: auto; }
+            .nav-menu ul { flex-direction: column; gap: 15px; }
+            .video-embed { height: 300px; }
         }
 
-        /* Mobile Responsive for Android */
         @media screen and (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-
-            .hero {
-                padding: 30px 15px;
-                margin-bottom: 20px;
-                border-radius: 15px;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-                line-height: 1.2;
-            }
-            
-            .hero p {
-                font-size: 0.9rem;
-                margin-bottom: 20px;
-            }
-            
-            .card {
-                padding: 15px;
-                margin-bottom: 15px;
-                border-radius: 15px;
-            }
-
-            .card h2 {
-                font-size: 1.4rem;
-                margin-bottom: 15px;
-            }
-
-            .card h3 {
-                font-size: 1.2rem;
-                margin: 20px 0 10px 0;
-                padding-left: 15px;
-            }
-
-            .card h3:before {
-                width: 8px;
-                height: 8px;
-            }
-
-            .card h4 {
-                font-size: 1rem;
-                margin: 15px 0 8px 0;
-            }
-
-            .card h5 {
-                font-size: 1rem;
-                margin: 12px 0 6px 0;
-            }
-
-            .card p, .card li {
-                font-size: 0.85rem;
-                line-height: 1.5;
-                margin-bottom: 8px;
-            }
-
-            .card ul, .card ol {
-                padding-left: 20px;
-                margin-bottom: 12px;
-            }
-            
-            .nav-menu {
-                border-radius: 10px;
-                padding: 15px 10px;
-                position: relative;
-                top: auto;
-                margin-bottom: 20px;
-            }
-
-            .nav-menu ul {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .nav-menu a {
-                display: block;
-                padding: 10px 15px;
-                font-size: 0.9rem;
-            }
-
-            .highlight-techniques {
-                grid-template-columns: 1fr;
-                gap: 12px;
-                margin: 20px 0;
-            }
-
-            .technique-card {
-                padding: 15px;
-                border-radius: 12px;
-            }
-
-            .technique-card h4 {
-                font-size: 1.1rem;
-                margin-bottom: 10px;
-            }
-
-            .technique-card p {
-                font-size: 0.9rem;
-            }
-
-            .tools-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-                margin: 20px 0;
-            }
-
-            .tool-item {
-                padding: 12px;
-                border-radius: 10px;
-            }
-
-            .tool-item h5 {
-                font-size: 1rem;
-                margin-bottom: 6px;
-            }
-
-            .tool-item p {
-                font-size: 0.8rem;
-            }
-
-            .tool-item img {
-                max-width: 120px;
-                margin-bottom: 10px;
-            }
-
-            .process-step {
-                padding: 15px;
-                margin: 15px 0;
-                border-radius: 12px;
-            }
-
-            .process-step:before {
-                left: -10px;
-                top: 12px;
-                width: 22px;
-                height: 22px;
-                font-size: 0.8rem;
-            }
-
-            .process-step h5 {
-                font-size: 1rem;
-                margin-bottom: 8px;
-            }
-
-            .process-step p {
-                font-size: 0.85rem;
-            }
-
-            .process-step ul {
-                padding-left: 15px;
-            }
-
-            .process-step li {
-                font-size: 0.8rem;
-                margin-bottom: 6px;
-            }
-
-            .technique-images {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                margin: 15px 0;
-            }
-
-            .technique-img {
-                padding: 12px;
-                border-radius: 12px;
-            }
-
-            .technique-img p {
-                font-size: 0.8rem;
-                margin-top: 8px;
-            }
-
-            .depth-comparison {
-                grid-template-columns: 1fr;
-                gap: 12px;
-                margin: 15px 0;
-            }
-
-            .depth-item {
-                padding: 15px;
-                border-radius: 12px;
-            }
-
-            .depth-item h5 {
-                font-size: 1rem;
-                margin-bottom: 8px;
-            }
-
-            .depth-item p {
-                font-size: 0.85rem;
-            }
-
-            .image-container {
-                margin: 15px 0;
-                padding: 12px;
-                border-radius: 12px;
-            }
-
-            .image-container img {
-                border-radius: 8px;
-            }
-
-            .image-caption {
-                font-size: 0.8rem;
-                margin-top: 8px;
-            }
-
-            .warning-box, .info-box {
-                margin: 15px 0;
-                padding: 15px;
-                border-radius: 10px;
-            }
-
-            .warning-box h4, .info-box h4 {
-                font-size: 1rem;
-                margin-bottom: 8px;
-            }
-
-            .warning-box p, .info-box p {
-                font-size: 0.85rem;
-            }
-
-            .important-section {
-                padding: 15px;
-                margin: 15px 0;
-            }
-
-            .important-section h4 {
-                font-size: 0.95rem;
-                padding-left: 30px;
-            }
-
-            .important-section h4::before {
-                font-size: 1.1rem;
-            }
-
-            .important-section p {
-                font-size: 0.8rem;
-            }
-
-            .numbered-list li {
-                padding-left: 40px;
-                margin-bottom: 12px;
-            }
-
-            .numbered-list li::before {
-                width: 25px;
-                height: 25px;
-                font-size: 0.85rem;
-            }
-
-            .video-section {
-                padding: 20px 15px;
-                margin: 20px 0;
-            }
-
-            .video-section h2 {
-                font-size: 1.5rem;
-                margin-bottom: 20px;
-            }
-
-            .video-card {
-                padding: 20px;
-            }
-
-            .video-card h3 {
-                font-size: 1.2rem;
-                margin-bottom: 12px;
-            }
-
-            .youtube-short {
-                height: 350px;
-                max-width: 200px;
-            }
-
-            .inline-video {
-                max-width: 280px;
-                height: 160px;
-            }
-        }
-
-        /* Extra Small Mobile */
-        @media screen and (max-width: 360px) {
-            .container {
-                padding: 8px;
-            }
-
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-
-            .card {
-                padding: 12px;
-            }
-
-            .card h2 {
-                font-size: 1.3rem;
-            }
-
-            .card h3 {
-                font-size: 1.1rem;
-            }
-
-            .nav-menu {
-                padding: 12px 8px;
-            }
-
-            .technique-card, .tool-item, .process-step {
-                padding: 12px;
-            }
-
-            .tool-item img {
-                max-width: 100px;
-            }
-
-            .important-section {
-                padding: 12px;
-            }
-
-            .important-section h4 {
-                padding-left: 25px;
-                font-size: 0.9rem;
-            }
-
-            .important-section h4::before {
-                font-size: 1rem;
-            }
-
-            .numbered-list li {
-                padding-left: 35px;
-            }
-
-            .numbered-list li::before {
-                width: 22px;
-                height: 22px;
-                font-size: 0.8rem;
-            }
-
-            .video-section {
-                padding: 15px 10px;
-            }
-
-            .video-section h2 {
-                font-size: 1.3rem;
-            }
-
-            .video-card {
-                padding: 15px;
-            }
-
-            .video-card h3 {
-                font-size: 1.1rem;
-            }
-
-            .youtube-short {
-                height: 300px;
-                max-width: 180px;
-            }
+            .hero h1 { font-size: 1.8rem; }
+            .hero p { font-size: 0.9rem; }
+            .card { padding: 15px; }
+            .card h2 { font-size: 1.4rem; }
+            .video-embed { height: 250px; }
         }
     </style>
 </head>
@@ -1077,7 +553,7 @@
         <nav class="nav-menu">
             <ul>
                 <li><a href="#pengertian">Pengertian</a></li>
-                <li><a href="#teknik">Teknik <span class="english-term">Highlight</span></a></li>
+                <li><a href="#teknik">Teknik Highlight</a></li>
                 <li><a href="#alat-bahan">Alat & Bahan</a></li>
                 <li><a href="#prosedur">Prosedur</a></li>
                 <li><a href="#video-referensi">Video Referensi</a></li>
@@ -1144,7 +620,7 @@
                 <p>Pengambilan dengan ketebalan 2mm setiap sectionnya. Efek yang dihasilkan dari metode ini adalah <span class="english-term">highlight</span> yang halus.</p>
                 <div class="image-container">
                     <img src="images/micro-slice.jpeg" alt="Micro Slice Technique" style="max-width: 300px;">
-                    <div class="image-caption">Gambar <span class="english-term">Micro Slice</span> - Ketebalan 2mm</div>
+                    <div class="image-caption">Gambar <span class="english-term">Micro Slice</span> - Ketebalan 2mm<br>(Sumber: Irlindawati, 2020)</div>
                 </div>
 
                 <div class="video-reference">
@@ -1158,7 +634,7 @@
                 <p>Pengambilan dengan ketebalan 4-6mm setiap sectionnya. Efek yang dihasilkan dari metode ini <span class="english-term">highlight</span> rambut akan lebih terlihat.</p>
                 <div class="image-container">
                     <img src="images/macro-slice.jpeg" alt="Macro Slice Technique" style="max-width: 300px;">
-                    <div class="image-caption">Gambar <span class="english-term">Macro Slice</span> - Ketebalan 4-6mm</div>
+                    <div class="image-caption">Gambar <span class="english-term">Macro Slice</span> - Ketebalan 4-6mm<br>(Sumber: Irlindawati, 2020)</div>
                 </div>
 
                 <div class="video-reference">
@@ -1179,15 +655,15 @@
                 <div class="technique-images">
                     <div class="technique-img">
                         <img src="images/micro-weaving.jpeg" alt="Micro Weaving">
-                        <p><strong>a. <span class="english-term">Micro</span></strong><br>Menghasilkan efek dinamis yang lemah</p>
+                        <p><strong>a. <span class="english-term">Micro</span></strong><br>Menghasilkan efek dinamis yang lemah<br>(Sumber: Irlindawati, 2020)</p>
                     </div>
                     <div class="technique-img">
                         <img src="images/medium-weaving.jpeg" alt="Medium Weaving">
-                        <p><strong>b. <span class="english-term">Medium</span></strong><br>Menghasilkan efek visual sedikit lebih kuat</p>
+                        <p><strong>b. <span class="english-term">Medium</span></strong><br>Menghasilkan efek visual sedikit lebih kuat<br>(Sumber: Irlindawati, 2020)</p>
                     </div>
                     <div class="technique-img">
                         <img src="images/macro-weaving.jpeg" alt="Macro Weaving">
-                        <p><strong>c. <span class="english-term">Macro</span></strong><br>Menghasilkan efek visual yang jauh lebih terlihat</p>
+                        <p><strong>c. <span class="english-term">Macro</span></strong><br>Menghasilkan efek visual yang jauh lebih terlihat<br>(Sumber: Irlindawati, 2020)</p>
                     </div>
                 </div>
 
@@ -1221,13 +697,13 @@
                     <div class="depth-item">
                         <h5>1. Kedalaman 0,5 cm sampai 1cm</h5>
                         <img src="images/weaving-depth-1cm.png" alt="Kedalaman 0,5 cm - 1 cm">
-                        <p>Efek dimensi yang dihasilkan 1cm menjauh dari kulit kepala</p>
+                        <p>Efek dimensi yang dihasilkan 1cm menjauh dari kulit kepala<br>(Sumber: Irlindawati, 2020)</p>
                     </div>
 
                     <div class="depth-item">
                         <h5>2. Kedalaman 0,25cm - 0,3cm</h5>
                         <img src="images/weaving-depth-close.png" alt="Kedalaman 0,25cm - 0,3cm">
-                        <p>Apabila hasil yang diinginkan dekat dengan kulit kepala. Anyamannya harus tidak lebih dari 0,25cm – 0,3cm kedalamannya</p>
+                        <p>Apabila hasil yang diinginkan dekat dengan kulit kepala. Anyamannya harus tidak lebih dari 0,25cm – 0,3cm kedalamannya<br>(Sumber: Irlindawati, 2020)</p>
                     </div>
                 </div>
 
@@ -1577,14 +1053,12 @@
             </div>
         </div>
 
-        <!-- Video Referensi Section -->
         <div class="video-section" id="video-referensi">
             <h2>Video Referensi</h2>
             <p style="text-align: center; color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; margin-bottom: 30px;">
                 Tutorial lengkap pewarnaan rambut <span class="english-term">highlight</span> untuk membantu pemahanan praktis
             </p>
             
-            <!-- Video Tutorial Lengkap -->
             <div class="video-card" style="margin-bottom: 40px;">
                 <h3>Tutorial Lengkap Pewarnaan Rambut <span class="english-term">Highlight</span></h3>
                 <iframe class="video-embed" src="https://www.youtube.com/embed/CYdLuJT0fGk" title="Tutorial Lengkap Hair Highlighting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -1598,10 +1072,36 @@
             <h2 style="color: white; border: none; margin: 0; font-size: 1.5rem;">Terima Kasih</h2>
             <p style="margin: 10px 0 0 0;">Materi Pewarnaan Rambut Teknik <span class="english-term">Highlight</span> telah selesai dipelajari</p>
         </div>
+
+        <div class="card" style="margin-top: 40px;">
+            <h2>DAFTAR PUSTAKA</h2>
+            <div style="padding: 20px 0;">
+                <p style="margin-bottom: 15px; text-indent: -40px; padding-left: 40px;">
+                    Ermavianti, Dwi., & Susilowati, Ani. (2020). <em>Pemangkasan dan Pewarnaan Rambut untuk SMK/MAK Kelas XI.</em> Yogyakarta: Andi Publisher. ISBN 978-623-01-0642-2.
+                </p>
+                <p style="margin-bottom: 15px; text-indent: -40px; padding-left: 40px;">
+                    Hamsar, I. (2023). <em>Pewarnaan rambut</em>. Tahta Media Group.
+                </p>
+                <p style="margin-bottom: 15px; text-indent: -40px; padding-left: 40px;">
+                    Irlindawati, S., Pujiastuti, L., & Suyono. (2020). <em>Pemangkasan dan pewarnaan rambut: Kecantikan kulit dan rambut</em>. Surakarta: Modul SMK/MAK.
+                </p>
+                <p style="margin-bottom: 15px; text-indent: -40px; padding-left: 40px;">
+                    Kesumawati, Maghfirah, Meilina, & Fitriliana. (2023). Uji ketahanan formulasi sel ekstrak daun pacar kuku (<em>Lawsonia inermis</em> L.) terhadap pewarnaan rambut. <em>Journal of Healthcare Technology and Medicine.</em>
+                </p>
+                <p style="margin-bottom: 15px; text-indent: -40px; padding-left: 40px;">
+                    Mustika, M. S. (2023). <em>Pewarnaan rambut (Hair coloring)</em>. Liniswara.
+                </p>
+                <p style="margin-bottom: 15px; text-indent: -40px; padding-left: 40px;">
+                    Sulistyorini, D. E., & Susilowati, A. (2021). <em>Pemangkasan dan pewarnaan rambut SMK/MAK kelas XII: Bidang keahlian pariwisata, program keahlian tata kecantikan, kompetensi keahlian tata kecantikan kulit dan rambut.</em> Penerbit Andi.
+                </p>
+                <p style="margin-bottom: 0; text-indent: -40px; padding-left: 40px;">
+                    Winona, A. B., Hidayah, N., & Supiani, T. (2024). Pengembangan e-modul teknik highlight pada pembelajaran pewarnaan rambut. <em>Academy of Education Journal, 15</em>(2), 1239.
+                </p>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-menu a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
